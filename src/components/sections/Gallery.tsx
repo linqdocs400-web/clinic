@@ -18,7 +18,7 @@ export function Gallery() {
             {GALLERY.map((src, i) => (
               <div
                 key={i}
-                className={`overflow-hidden bg-ink/10 shrink-0 ${
+                className={`group relative overflow-hidden bg-ink/10 shrink-0 ${
                   i === 2
                     ? "aspect-[3/4] w-[200px] sm:w-[250px]"
                     : i === 5
@@ -30,7 +30,7 @@ export function Gallery() {
                   src={src}
                   alt={`Clinic Interior ${i + 1}`}
                   loading="lazy"
-                  className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             ))}
@@ -42,7 +42,7 @@ export function Gallery() {
           {GALLERY.map((src, i) => (
             <div
               key={i}
-              className={`overflow-hidden bg-ink/10 w-full h-full ${
+              className={`group relative overflow-hidden bg-ink/10 w-full h-full ${
                 i === 2 ? "row-span-2" : i === 5 ? "col-span-2" : ""
               }`}
             >
@@ -50,7 +50,7 @@ export function Gallery() {
                 src={src}
                 alt={`Clinic Interior ${i + 1}`}
                 loading="lazy"
-                className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           ))}
