@@ -20,6 +20,7 @@ import result5Img from "./assets/result5.png";
 
 import beforeImg from "./assets/before.png";
 import afterImg from "./assets/after.png";
+import { Gallery } from "./components/sections/Gallery";
 
 /* ------------------------------ Data ------------------------------ */
 
@@ -212,17 +213,6 @@ const TESTIMONIALS = [
     name: "Ananya P.",
     tag: "Anti-Aging Peels",
   },
-];
-
-const GALLERY = [
-  "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=700&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=700&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=700&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1631815587646-b85a1bb027e1?w=700&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=700&q=70&auto=format&fit=crop",
 ];
 
 /* ------------------------------ Icons ------------------------------ */
@@ -1198,83 +1188,6 @@ function Testimonials() {
               </figure>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Gallery() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true, loop: true }, [
-    WheelGesturesPlugin(),
-  ]);
-
-  const scroll = (dir: 1 | -1) => {
-    if (!emblaApi) return;
-    if (dir === -1) emblaApi.scrollPrev();
-    else emblaApi.scrollNext();
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-  };
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
-  };
-
-  return (
-    <section className="py-20 lg:py-28 overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-wrap items-end justify-between gap-6"
-        >
-          <div className="text-left">
-            <div className="font-script text-2xl text-ink-soft">our space</div>
-            <h2 className="font-display text-4xl sm:text-5xl text-ink mt-2">Inside the clinic.</h2>
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={() => scroll(-1)}
-              className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"
-            >
-              <Icon name="arrow-left" className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => scroll(1)}
-              className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"
-            >
-              <Icon name="arrow-right" className="w-4 h-4" />
-            </button>
-          </div>
-        </motion.div>
-        <div className="mt-12 overflow-hidden" ref={emblaRef}>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="flex gap-4 cursor-grab active:cursor-grabbing"
-          >
-            {GALLERY.map((src, i) => (
-              <motion.div
-                key={i}
-                variants={itemVariants}
-                className="overflow-hidden bg-ink/10 shrink-0 aspect-square lg:h-[300px] w-[200px] sm:w-[250px] lg:w-auto"
-              >
-                <img
-                  src={src}
-                  alt=""
-                  loading="lazy"
-                  className="w-full h-full object-cover hover:scale-110 transition duration-1000"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </div>
     </section>
