@@ -5,14 +5,7 @@ import Inside4 from "../../assets/Inside4.jpeg";
 import Inside5 from "../../assets/Inside5.jpeg";
 import Inside6 from "../../assets/Inside6.jpeg";
 
-const GALLERY = [
-  Inside1,
-  Inside2,
-  Inside3,
-  Inside4,
-  Inside5,
-  Inside6,
-];
+const GALLERY = [Inside1, Inside2, Inside3, Inside4, Inside5, Inside6];
 
 export function Gallery() {
   return (
@@ -20,9 +13,7 @@ export function Gallery() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 text-center">
         <div className="font-script text-2xl text-ink-soft">our space</div>
 
-        <h2 className="font-display text-4xl sm:text-5xl text-ink mt-2">
-          Inside the clinic.
-        </h2>
+        <h2 className="font-display text-4xl sm:text-5xl text-ink mt-2">Inside the clinic.</h2>
 
         <div className="mt-12 lg:grid lg:grid-cols-4 gap-3 sm:gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex lg:grid lg:grid-cols-4 gap-3 sm:gap-4 min-w-max lg:min-w-0">
@@ -33,8 +24,8 @@ export function Gallery() {
                   i === 2
                     ? "row-span-2 aspect-[3/4] w-[200px] sm:w-[250px]"
                     : i === 5
-                    ? "col-span-2 aspect-[3/2] w-[400px] sm:w-[500px]"
-                    : "aspect-square w-[200px] sm:w-[250px]"
+                      ? "col-span-2 aspect-[3/2] w-[400px] sm:w-[500px]"
+                      : "aspect-square w-[200px] sm:w-[250px]"
                 }`}
               >
                 <img

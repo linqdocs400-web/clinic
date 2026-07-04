@@ -16,7 +16,10 @@ export function Treatments() {
         <div className="mt-12 lg:grid lg:grid-cols-4 gap-5 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex lg:grid lg:grid-cols-4 gap-5 min-w-max lg:min-w-0">
             {TREATMENT_GROUPS.map((g) => (
-              <div key={g.title} className="bg-cream border border-ink/8 p-7 shadow-[0_1px_0_rgba(0,0,0,0.03)] w-[280px] sm:w-[320px] lg:w-auto shrink-0">
+              <div
+                key={g.title}
+                className="bg-cream border border-ink/8 p-7 shadow-[0_1px_0_rgba(0,0,0,0.03)] w-[280px] sm:w-[320px] lg:w-auto shrink-0"
+              >
                 <Icon name={g.icon} className="w-6 h-6 text-ink" />
                 <h3 className="font-display text-xl text-ink mt-5">{g.title}</h3>
                 <div className="mt-2 h-px w-10 bg-ink/30" />

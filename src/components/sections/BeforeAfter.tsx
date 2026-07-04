@@ -39,10 +39,7 @@ export function BeforeAfter() {
             className="absolute inset-0 w-full h-full object-cover"
             draggable={false}
           />
-          <div
-            className="absolute inset-0 overflow-hidden"
-            style={{ width: `${pos}%` }}
-          >
+          <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
             <img
               src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1400&q=75&auto=format&fit=crop"
               alt="Before hair restoration"
@@ -57,10 +54,7 @@ export function BeforeAfter() {
           <div className="absolute top-4 right-4 bg-cream text-ink text-[10px] tracking-[0.3em] uppercase px-3 py-1.5">
             After
           </div>
-          <div
-            className="absolute top-0 bottom-0 w-px bg-cream"
-            style={{ left: `${pos}%` }}
-          />
+          <div className="absolute top-0 bottom-0 w-px bg-cream" style={{ left: `${pos}%` }} />
           <button
             onPointerDown={drag}
             aria-label="Drag to compare"

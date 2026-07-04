@@ -33,19 +33,30 @@ export function Hero() {
           {/* Copy */}
           <div className="pb-10 lg:pb-16">
             <div className="font-script text-3xl text-ink-soft animate-fade-in-up">welcome</div>
-            <h1 className="font-display text-[40px] sm:text-6xl lg:text-7xl leading-[1.02] text-ink mt-2 tracking-tight animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            <h1
+              className="font-display text-[40px] sm:text-6xl lg:text-7xl leading-[1.02] text-ink mt-2 tracking-tight animate-fade-in-up"
+              style={{ animationDelay: "0.1s" }}
+            >
               Advanced Skin, Hair
               <br className="hidden sm:block" /> &amp; Laser Care
             </h1>
-            <div className="font-script text-3xl sm:text-4xl text-ink-soft/90 mt-3 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <div
+              className="font-script text-3xl sm:text-4xl text-ink-soft/90 mt-3 animate-fade-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
               for every stage of life.
             </div>
-            <p className="mt-6 max-w-xl text-ink/70 text-[15px] leading-relaxed animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              Expert dermatology, trichology, cosmetic and laser treatments —
-              delivered with precision, care and the trust of thousands of patients
-              across Hyderabad.
+            <p
+              className="mt-6 max-w-xl text-ink/70 text-[15px] leading-relaxed animate-fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              Expert dermatology, trichology, cosmetic and laser treatments — delivered with
+              precision, care and the trust of thousands of patients across Hyderabad.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div
+              className="mt-8 flex flex-wrap gap-3 animate-fade-in-up"
+              style={{ animationDelay: "0.4s" }}
+            >
               <a
                 href="https://wa.me/918985504044?text=Hi,%20I%20am%20from%20your%20website.%20I%20would%20like%20to%20book%20an%20appointment."
                 target="_blank"

@@ -396,7 +396,11 @@ function TopBar() {
 function Logo() {
   return (
     <a href="#" className="flex items-center gap-3">
-      <img src={logoImg} alt="SK Clinic Logo" className="h-12 w-12 object-contain rounded-full border border-ink/20 bg-cream" />
+      <img
+        src={logoImg}
+        alt="SK Clinic Logo"
+        className="h-12 w-12 object-contain rounded-full border border-ink/20 bg-cream"
+      />
       <div className="leading-tight">
         <div className="font-display italic text-lg text-ink">Siri &amp; Koushik's</div>
         <div className="text-[10px] tracking-[0.32em] text-ink/70">SKIN · HAIR · LASER</div>
@@ -471,7 +475,7 @@ function Header() {
 
 function Hero() {
   const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [
-    AutoScroll({ stopOnInteraction: false, stopOnMouseEnter: true, speed: 1.2 })
+    AutoScroll({ stopOnInteraction: false, stopOnMouseEnter: true, speed: 1.2 }),
   ]);
 
   return (
@@ -521,7 +525,9 @@ function Hero() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="font-script text-3xl text-ink-soft"
-            >welcome</motion.div>
+            >
+              welcome
+            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -548,9 +554,8 @@ function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mt-6 max-w-xl text-ink/70 text-[15px] leading-relaxed"
             >
-              Expert dermatology, trichology, cosmetic and laser treatments —
-              delivered with precision, care and the trust of thousands of patients
-              across Hyderabad.
+              Expert dermatology, trichology, cosmetic and laser treatments — delivered with
+              precision, care and the trust of thousands of patients across Hyderabad.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -610,8 +615,8 @@ function Hero() {
 
 function Stat({ n, l }: { n: string; l: string }) {
   const [count, setCount] = useState(0);
-  const target = parseInt(n.replace(/\D/g, ''));
-  const suffix = n.replace(/[\d]/g, '');
+  const target = parseInt(n.replace(/\D/g, ""));
+  const suffix = n.replace(/[\d]/g, "");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -634,8 +639,16 @@ function Stat({ n, l }: { n: string; l: string }) {
   }, [isInView, target]);
 
   return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-      <div className="font-display text-4xl sm:text-5xl">{count}{suffix}</div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <div className="font-display text-4xl sm:text-5xl">
+        {count}
+        {suffix}
+      </div>
       <div className="mt-1 text-[10px] tracking-[0.3em] uppercase opacity-80">{l}</div>
     </motion.div>
   );
@@ -658,14 +671,13 @@ function About() {
           </div>
           <div className="mt-6 h-px w-16 bg-ink/30" />
           <p className="mt-6 text-ink/75 leading-relaxed max-w-md">
-            I built Siri &amp; Koushik's as a calm, considered space where modern
-            dermatology meets genuine listening. Every plan we design is shaped to
-            your skin, your story and your goals — never a generic protocol.
+            I built Siri &amp; Koushik's as a calm, considered space where modern dermatology meets
+            genuine listening. Every plan we design is shaped to your skin, your story and your
+            goals — never a generic protocol.
           </p>
           <p className="mt-4 text-ink/75 leading-relaxed max-w-md">
-            From advanced laser and dermatosurgery to gentle pediatric care, our
-            clinic brings evidence-based medicine together with the warmth of a
-            personal practice.
+            From advanced laser and dermatosurgery to gentle pediatric care, our clinic brings
+            evidence-based medicine together with the warmth of a personal practice.
           </p>
           <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-sm text-ink/80">
             {[
@@ -731,11 +743,11 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function WhyUs() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { dragFree: true, loop: true, breakpoints: { '(min-width: 1024px)': { active: false } } },
+    { dragFree: true, loop: true, breakpoints: { "(min-width: 1024px)": { active: false } } },
     [
       AutoScroll({ stopOnInteraction: false, stopOnMouseEnter: true, speed: 1.2 }),
-      WheelGesturesPlugin()
-    ]
+      WheelGesturesPlugin(),
+    ],
   );
 
   const scroll = (dir: 1 | -1) => {
@@ -748,13 +760,13 @@ function WhyUs() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
+      transition: { staggerChildren: 0.1 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
@@ -780,7 +792,10 @@ function WhyUs() {
           >
             Ten reasons patients across Hyderabad trust us with their skin and hair.
           </motion.p>
-          <div className="mt-12 overflow-hidden lg:overflow-visible mx-auto block max-w-6xl" ref={emblaRef}>
+          <div
+            className="mt-12 overflow-hidden lg:overflow-visible mx-auto block max-w-6xl"
+            ref={emblaRef}
+          >
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -820,7 +835,7 @@ function HorizontalRail({
   children: React.ReactNode;
 }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true, loop: false }, [
-    WheelGesturesPlugin()
+    WheelGesturesPlugin(),
   ]);
 
   const scroll = (dir: 1 | -1) => {
@@ -831,7 +846,7 @@ function HorizontalRail({
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   return (
@@ -865,10 +880,7 @@ function HorizontalRail({
             </button>
           </div>
         </div>
-        <div
-          ref={emblaRef}
-          className="mt-10 overflow-hidden"
-        >
+        <div ref={emblaRef} className="mt-10 overflow-hidden">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -887,7 +899,7 @@ function HorizontalRail({
 function Conditions() {
   const itemVariants = {
     hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
   };
 
   return (
@@ -925,7 +937,7 @@ function Conditions() {
 
 function Treatments() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true, loop: false }, [
-    WheelGesturesPlugin()
+    WheelGesturesPlugin(),
   ]);
 
   const scroll = (dir: 1 | -1) => {
@@ -938,13 +950,13 @@ function Treatments() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 }
-    }
+      transition: { staggerChildren: 0.15 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   };
 
   return (
@@ -963,8 +975,18 @@ function Treatments() {
             </h2>
           </div>
           <div className="flex gap-2">
-            <button onClick={() => scroll(-1)} className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"><Icon name="arrow-left" className="w-4 h-4" /></button>
-            <button onClick={() => scroll(1)} className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"><Icon name="arrow-right" className="w-4 h-4" /></button>
+            <button
+              onClick={() => scroll(-1)}
+              className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"
+            >
+              <Icon name="arrow-left" className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => scroll(1)}
+              className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"
+            >
+              <Icon name="arrow-right" className="w-4 h-4" />
+            </button>
           </div>
         </motion.div>
 
@@ -977,7 +999,11 @@ function Treatments() {
             className="flex gap-5 cursor-grab active:cursor-grabbing"
           >
             {TREATMENT_GROUPS.map((g) => (
-              <motion.div key={g.title} variants={itemVariants} className="bg-cream border border-ink/8 p-7 shadow-[0_1px_0_rgba(0,0,0,0.03)] w-[280px] sm:w-[320px] shrink-0 group hover:shadow-lg transition-shadow duration-500">
+              <motion.div
+                key={g.title}
+                variants={itemVariants}
+                className="bg-cream border border-ink/8 p-7 shadow-[0_1px_0_rgba(0,0,0,0.03)] w-[280px] sm:w-[320px] shrink-0 group hover:shadow-lg transition-shadow duration-500"
+              >
                 <span className="inline-block transition-transform duration-500 group-hover:scale-110">
                   <Icon name={g.icon} className="w-6 h-6 text-ink" />
                 </span>
@@ -986,7 +1012,10 @@ function Treatments() {
                 <ul className="mt-5 space-y-2.5 text-sm text-ink/75">
                   {g.items.map((i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="text-ink/40 transition-colors duration-300 group-hover:text-ink/80">•</span> {i}
+                      <span className="text-ink/40 transition-colors duration-300 group-hover:text-ink/80">
+                        •
+                      </span>{" "}
+                      {i}
                     </li>
                   ))}
                 </ul>
@@ -1002,20 +1031,31 @@ function Treatments() {
 function Results() {
   const itemVariants = {
     hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
   };
 
   return (
     <HorizontalRail id="results" label="real results" title="Real results. Real confidence.">
       {RESULTS.map((r) => (
-        <motion.article variants={itemVariants} key={r.label} className="shrink-0 w-[85%] sm:w-[55%] lg:w-[40%] group">
+        <motion.article
+          variants={itemVariants}
+          key={r.label}
+          className="shrink-0 w-[85%] sm:w-[55%] lg:w-[40%] group"
+        >
           <div className="aspect-[4/3] overflow-hidden bg-ink/10 rounded-[4px]">
-            <img src={r.img} alt={r.label} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition duration-1000" />
+            <img
+              src={r.img}
+              alt={r.label}
+              loading="lazy"
+              className="w-full h-full object-cover group-hover:scale-110 transition duration-1000"
+            />
           </div>
           <div className="mt-4 text-[10px] tracking-[0.3em] uppercase text-ink/55 pl-1 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
             {r.meta}
           </div>
-          <h3 className="font-display text-xl text-ink mt-1 pl-1 transition-transform duration-500 group-hover:translate-x-1">{r.label}</h3>
+          <h3 className="font-display text-xl text-ink mt-1 pl-1 transition-transform duration-500 group-hover:translate-x-1">
+            {r.label}
+          </h3>
           <p className="text-sm text-ink/60 pl-1">{r.sub}</p>
         </motion.article>
       ))}
@@ -1062,7 +1102,7 @@ function BeforeAfter() {
         <div
           ref={wrapRef}
           className="relative mt-10 mx-auto max-w-3xl aspect-[16/10] overflow-hidden bg-ink/20 select-none"
-          style={{ touchAction: 'none' }}
+          style={{ touchAction: "none" }}
         >
           <img
             src={currentData.after}
@@ -1070,10 +1110,7 @@ function BeforeAfter() {
             className="absolute inset-0 w-full h-full object-cover"
             draggable={false}
           />
-          <div
-            className="absolute inset-0 overflow-hidden"
-            style={{ width: `${pos}%` }}
-          >
+          <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
             <img
               src={currentData.before}
               alt="Before"
@@ -1088,10 +1125,7 @@ function BeforeAfter() {
           <div className="absolute top-4 right-4 bg-cream text-ink text-[10px] tracking-[0.3em] uppercase px-3 py-1.5">
             After
           </div>
-          <div
-            className="absolute top-0 bottom-0 w-px bg-cream"
-            style={{ left: `${pos}%` }}
-          />
+          <div className="absolute top-0 bottom-0 w-px bg-cream" style={{ left: `${pos}%` }} />
           <button
             onPointerDown={drag}
             aria-label="Drag to compare"
@@ -1111,9 +1145,7 @@ function BeforeAfter() {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-5 py-2 rounded-full text-xs tracking-widest uppercase transition-colors ${
-                activeTab === tab
-                  ? "bg-ink text-cream"
-                  : "bg-ink/10 text-ink hover:bg-ink/20"
+                activeTab === tab ? "bg-ink text-cream" : "bg-ink/10 text-ink hover:bg-ink/20"
               }`}
             >
               {tab}
@@ -1128,7 +1160,7 @@ function BeforeAfter() {
 function Testimonials() {
   const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [
     AutoScroll({ stopOnInteraction: false, stopOnMouseEnter: true, speed: 1.5 }),
-    WheelGesturesPlugin()
+    WheelGesturesPlugin(),
   ]);
 
   return (
@@ -1148,7 +1180,10 @@ function Testimonials() {
         <div className="mt-12" ref={emblaRef}>
           <div className="flex gap-5 cursor-grab active:cursor-grabbing">
             {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
-              <figure key={`${t.name}-${i}`} className="bg-cream border border-ink/10 p-6 flex flex-col w-[280px] sm:w-[320px] shrink-0 pl-5">
+              <figure
+                key={`${t.name}-${i}`}
+                className="bg-cream border border-ink/10 p-6 flex flex-col w-[280px] sm:w-[320px] shrink-0 pl-5"
+              >
                 <div className="text-[oklch(0.55_0.05_150)] tracking-widest text-sm">★★★★★</div>
                 <blockquote className="mt-4 text-[13px] leading-relaxed text-ink/85 flex-1">
                   "{t.q}"
@@ -1171,7 +1206,7 @@ function Testimonials() {
 
 function Gallery() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true, loop: true }, [
-    WheelGesturesPlugin()
+    WheelGesturesPlugin(),
   ]);
 
   const scroll = (dir: 1 | -1) => {
@@ -1182,11 +1217,11 @@ function Gallery() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
   };
 
   return (
@@ -1203,8 +1238,18 @@ function Gallery() {
             <h2 className="font-display text-4xl sm:text-5xl text-ink mt-2">Inside the clinic.</h2>
           </div>
           <div className="flex gap-2">
-            <button onClick={() => scroll(-1)} className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"><Icon name="arrow-left" className="w-4 h-4" /></button>
-            <button onClick={() => scroll(1)} className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"><Icon name="arrow-right" className="w-4 h-4" /></button>
+            <button
+              onClick={() => scroll(-1)}
+              className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"
+            >
+              <Icon name="arrow-left" className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => scroll(1)}
+              className="grid h-11 w-11 place-items-center border border-ink/30 text-ink hover:bg-ink hover:text-cream transition"
+            >
+              <Icon name="arrow-right" className="w-4 h-4" />
+            </button>
           </div>
         </motion.div>
         <div className="mt-12 overflow-hidden" ref={emblaRef}>
@@ -1250,11 +1295,18 @@ function Visit() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 -mt-24 lg:-mt-32 relative">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-10">
           <div className="bg-cream p-8 sm:p-10 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] space-y-7">
-            <a href="https://maps.google.com/?q=16-11-578/A, Opposite Red Cross Hospital, Near Raghavendra Hotel, Gaddiannaram Cross Road, Dilsukhnagar, Hyderabad – 500060" target="_blank" rel="noopener noreferrer" className="block group">
+            <a
+              href="https://maps.google.com/?q=16-11-578/A, Opposite Red Cross Hospital, Near Raghavendra Hotel, Gaddiannaram Cross Road, Dilsukhnagar, Hyderabad – 500060"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group"
+            >
               <InfoRow icon="pin" title="Address">
                 <span className="group-hover:text-ink-soft transition-colors">
-                  16-11-578/A, Opposite Red Cross Hospital,<br />
-                  Near Raghavendra Hotel, Gaddiannaram Cross Road,<br />
+                  16-11-578/A, Opposite Red Cross Hospital,
+                  <br />
+                  Near Raghavendra Hotel, Gaddiannaram Cross Road,
+                  <br />
                   Dilsukhnagar, Hyderabad – 500060
                 </span>
               </InfoRow>
@@ -1264,14 +1316,23 @@ function Visit() {
                 <span className="group-hover:text-ink-soft transition-colors">+91 8985504044</span>
               </InfoRow>
             </a>
-            <a href="https://instagram.com/hyderabadi.derma.docs" target="_blank" rel="noopener noreferrer" className="block group">
+            <a
+              href="https://instagram.com/hyderabadi.derma.docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group"
+            >
               <InfoRow icon="instagram" title="Instagram">
-                <span className="group-hover:text-ink-soft transition-colors">@hyderabadi.derma.docs</span>
+                <span className="group-hover:text-ink-soft transition-colors">
+                  @hyderabadi.derma.docs
+                </span>
               </InfoRow>
             </a>
             <InfoRow icon="clock" title="Hours">
-              Mon – Sat · 6:30 PM – 9:30 PM<br />
-              Sunday · 10:00 AM – 2:00 PM<br />
+              Mon – Sat · 6:30 PM – 9:30 PM
+              <br />
+              Sunday · 10:00 AM – 2:00 PM
+              <br />
               <span className="text-ink/50 text-xs">Appointments only</span>
             </InfoRow>
           </div>
@@ -1318,28 +1379,50 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 py-16 grid gap-10 lg:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logoImg} alt="SK Clinic Logo" className="h-12 w-12 object-contain rounded-full bg-white p-1" />
+            <img
+              src={logoImg}
+              alt="SK Clinic Logo"
+              className="h-12 w-12 object-contain rounded-full bg-white p-1"
+            />
             <div>
               <div className="font-display italic text-lg text-white">Siri &amp; Koushik's</div>
-              <div className="text-[10px] tracking-[0.32em] text-white/60">
-                SKIN · HAIR · LASER
-              </div>
+              <div className="text-[10px] tracking-[0.32em] text-white/60">SKIN · HAIR · LASER</div>
             </div>
           </div>
           <p className="mt-5 text-sm leading-relaxed max-w-sm text-white/80">
-            Where skin meets confidence. A premium dermatology clinic offering medical,
-            surgical and aesthetic care in Hyderabad.
+            Where skin meets confidence. A premium dermatology clinic offering medical, surgical and
+            aesthetic care in Hyderabad.
           </p>
           <div className="mt-5 flex gap-2">
-            <a href="https://instagram.com/hyderabadi.derma.docs" target="_blank" rel="noopener noreferrer" aria-label="instagram" className="grid h-10 w-10 place-items-center border border-white/25 text-white/80 hover:bg-white hover:text-ink transition"><Icon name="instagram" className="w-4 h-4" /></a>
-            <a href="https://wa.me/918985504044" target="_blank" rel="noopener noreferrer" aria-label="chat" className="grid h-10 w-10 place-items-center border border-white/25 text-white/80 hover:bg-white hover:text-ink transition"><Icon name="chat" className="w-4 h-4" /></a>
-            <a href="tel:+918985504044" aria-label="phone" className="grid h-10 w-10 place-items-center border border-white/25 text-white/80 hover:bg-white hover:text-ink transition"><Icon name="phone" className="w-4 h-4" /></a>
+            <a
+              href="https://instagram.com/hyderabadi.derma.docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="instagram"
+              className="grid h-10 w-10 place-items-center border border-white/25 text-white/80 hover:bg-white hover:text-ink transition"
+            >
+              <Icon name="instagram" className="w-4 h-4" />
+            </a>
+            <a
+              href="https://wa.me/918985504044"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="chat"
+              className="grid h-10 w-10 place-items-center border border-white/25 text-white/80 hover:bg-white hover:text-ink transition"
+            >
+              <Icon name="chat" className="w-4 h-4" />
+            </a>
+            <a
+              href="tel:+918985504044"
+              aria-label="phone"
+              className="grid h-10 w-10 place-items-center border border-white/25 text-white/80 hover:bg-white hover:text-ink transition"
+            >
+              <Icon name="phone" className="w-4 h-4" />
+            </a>
           </div>
         </div>
         <div>
-          <div className="text-[10px] tracking-[0.3em] uppercase text-white/60">
-            Quick Links
-          </div>
+          <div className="text-[10px] tracking-[0.3em] uppercase text-white/60">Quick Links</div>
           <ul className="mt-5 space-y-3 text-sm text-white/80">
             {NAV.map((n) => (
               <li key={n.label}>
@@ -1362,7 +1445,8 @@ function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 py-5 text-center text-xs text-white/55">
-          © {new Date().getFullYear()} Siri &amp; Koushik's Skin Hair STD Clinic. All rights reserved.
+          © {new Date().getFullYear()} Siri &amp; Koushik's Skin Hair STD Clinic. All rights
+          reserved.
         </div>
       </div>
     </footer>

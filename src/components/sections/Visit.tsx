@@ -15,15 +15,23 @@ export function Visit() {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-10">
           <div className="bg-cream p-8 sm:p-10 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] space-y-7">
             <InfoRow icon="pin" title="Address">
-              16-11-578/A, Opposite Red Cross Hospital,<br />
-              Near Raghavendra Hotel, Gaddiannaram Cross Road,<br />
+              16-11-578/A, Opposite Red Cross Hospital,
+              <br />
+              Near Raghavendra Hotel, Gaddiannaram Cross Road,
+              <br />
               Dilsukhnagar, Hyderabad – 500060
             </InfoRow>
-            <InfoRow icon="phone" title="Phone">+91 8985504044</InfoRow>
-            <InfoRow icon="instagram" title="Instagram">@hyderabadi.derma.docs</InfoRow>
+            <InfoRow icon="phone" title="Phone">
+              +91 8985504044
+            </InfoRow>
+            <InfoRow icon="instagram" title="Instagram">
+              @hyderabadi.derma.docs
+            </InfoRow>
             <InfoRow icon="clock" title="Hours">
-              Mon – Sat · 6:30 PM – 9:30 PM<br />
-              Sunday · 10:00 AM – 2:00 PM<br />
+              Mon – Sat · 6:30 PM – 9:30 PM
+              <br />
+              Sunday · 10:00 AM – 2:00 PM
+              <br />
               <span className="text-ink/50 text-xs">Appointments only</span>
             </InfoRow>
           </div>

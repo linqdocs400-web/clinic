@@ -12,14 +12,12 @@ export function Footer() {
             </div>
             <div>
               <div className="font-display italic text-lg text-cream">Siri &amp; Koushik's</div>
-              <div className="text-[10px] tracking-[0.32em] text-cream/60">
-                SKIN · HAIR · LASER
-              </div>
+              <div className="text-[10px] tracking-[0.32em] text-cream/60">SKIN · HAIR · LASER</div>
             </div>
           </div>
           <p className="mt-5 text-sm leading-relaxed max-w-sm">
-            Where skin meets confidence. A premium dermatology clinic offering medical,
-            surgical and aesthetic care in Hyderabad.
+            Where skin meets confidence. A premium dermatology clinic offering medical, surgical and
+            aesthetic care in Hyderabad.
           </p>
           <div className="mt-5 flex gap-2">
             {["instagram", "chat", "phone"].map((i) => (
@@ -35,9 +33,7 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <div className="text-[10px] tracking-[0.3em] uppercase text-cream/60">
-            Quick Links
-          </div>
+          <div className="text-[10px] tracking-[0.3em] uppercase text-cream/60">Quick Links</div>
           <ul className="mt-5 space-y-3 text-sm">
             {NAV.map((n) => (
               <li key={n.label}>
@@ -60,7 +56,8 @@ export function Footer() {
       </div>
       <div className="border-t border-cream/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 py-5 text-center text-xs text-cream/55">
-          © {new Date().getFullYear()} Siri &amp; Koushik's Skin Hair STD Clinic. All rights reserved.
+          © {new Date().getFullYear()} Siri &amp; Koushik's Skin Hair STD Clinic. All rights
+          reserved.
         </div>
       </div>
     </footer>

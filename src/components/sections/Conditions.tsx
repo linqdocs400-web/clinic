@@ -5,10 +5,7 @@ export function Conditions() {
   return (
     <HorizontalRail id="conditions" label="conditions" title="Diseases we treat.">
       {CONDITIONS.map((c) => (
-        <article
-          key={c.name}
-          className="snap-start shrink-0 w-[78%] sm:w-[44%] lg:w-[26%]"
-        >
+        <article key={c.name} className="snap-start shrink-0 w-[78%] sm:w-[44%] lg:w-[26%]">
           <div className="relative aspect-[3/4] overflow-hidden bg-ink/10 group">
             <img
               src={c.img}
@@ -17,9 +14,7 @@ export function Conditions() {
               className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <h3 className="absolute bottom-4 left-5 font-display text-2xl text-cream">
-              {c.name}
-            </h3>
+            <h3 className="absolute bottom-4 left-5 font-display text-2xl text-cream">{c.name}</h3>
           </div>
           <p className="mt-4 text-sm text-ink/65">{c.blurb}</p>
           <a

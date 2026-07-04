@@ -7,20 +7,24 @@ export function About() {
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <div className="font-script text-2xl text-ink-soft animate-fade-in-right">Hi, I'm</div>
-          <h2 className="font-display text-5xl lg:text-6xl text-ink mt-2 animate-fade-in-right" style={{animationDelay: '0.1s'}}>Dr. Koushik</h2>
+          <h2
+            className="font-display text-5xl lg:text-6xl text-ink mt-2 animate-fade-in-right"
+            style={{ animationDelay: "0.1s" }}
+          >
+            Dr. Koushik
+          </h2>
           <div className="mt-3 text-[11px] tracking-[0.28em] text-ink/60 uppercase">
             MBBS · MD Dermatology · Dermatosurgeon
           </div>
           <div className="mt-6 h-px w-16 bg-ink/30" />
           <p className="mt-6 text-ink/75 leading-relaxed max-w-md">
-            I built Siri &amp; Koushik's as a calm, considered space where modern
-            dermatology meets genuine listening. Every plan we design is shaped to
-            your skin, your story and your goals — never a generic protocol.
+            I built Siri &amp; Koushik's as a calm, considered space where modern dermatology meets
+            genuine listening. Every plan we design is shaped to your skin, your story and your
+            goals — never a generic protocol.
           </p>
           <p className="mt-4 text-ink/75 leading-relaxed max-w-md">
-            From advanced laser and dermatosurgery to gentle pediatric care, our
-            clinic brings evidence-based medicine together with the warmth of a
-            personal practice.
+            From advanced laser and dermatosurgery to gentle pediatric care, our clinic brings
+            evidence-based medicine together with the warmth of a personal practice.
           </p>
           <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-sm text-ink/80">
             {[
@@ -49,14 +53,14 @@ export function About() {
             alt="Treatment result"
             className="col-span-2 row-span-2 col-start-5 row-start-1 object-cover w-full h-full shadow-lg animate-pop-in"
             loading="lazy"
-            style={{animationDelay: '0.2s'}}
+            style={{ animationDelay: "0.2s" }}
           />
           <img
             src="https://images.unsplash.com/photo-1559599189-fe84dea4eb79?w=600&q=70&auto=format&fit=crop"
             alt="Hair restoration"
             className="col-span-2 row-span-2 col-start-1 row-start-5 object-cover w-full h-full shadow-lg animate-pop-in"
             loading="lazy"
-            style={{animationDelay: '0.4s'}}
+            style={{ animationDelay: "0.4s" }}
           />
         </div>
       </div>

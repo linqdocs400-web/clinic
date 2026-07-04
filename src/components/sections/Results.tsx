@@ -9,9 +9,7 @@ export function Results() {
           <div className="aspect-[4/3] overflow-hidden bg-ink/10">
             <img src={r.img} alt={r.label} loading="lazy" className="w-full h-full object-cover" />
           </div>
-          <div className="mt-4 text-[10px] tracking-[0.3em] uppercase text-ink/55">
-            {r.meta}
-          </div>
+          <div className="mt-4 text-[10px] tracking-[0.3em] uppercase text-ink/55">{r.meta}</div>
           <h3 className="font-display text-xl text-ink mt-1">{r.label}</h3>
           <p className="text-sm text-ink/60">{r.sub}</p>
         </article>

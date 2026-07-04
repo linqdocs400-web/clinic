@@ -13,7 +13,10 @@ export function Testimonials() {
         <div className="mt-12 overflow-hidden">
           <div className="flex gap-5 animate-[scroll_30s_linear_infinite] hover:[animation-play-state:paused]">
             {[...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
-              <figure key={`${t.name}-${i}`} className="bg-cream border border-ink/10 p-6 flex flex-col w-[280px] sm:w-[320px] shrink-0">
+              <figure
+                key={`${t.name}-${i}`}
+                className="bg-cream border border-ink/10 p-6 flex flex-col w-[280px] sm:w-[320px] shrink-0"
+              >
                 <div className="text-[oklch(0.55_0.05_150)] tracking-widest text-sm">★★★★★</div>
                 <blockquote className="mt-4 text-[13px] leading-relaxed text-ink/85 flex-1">
                   "{t.q}"
