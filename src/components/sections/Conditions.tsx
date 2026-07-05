@@ -44,10 +44,7 @@ export function Conditions() {
           className="mt-10 flex gap-5 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
         >
           {CONDITIONS.map((c) => (
-            <article
-              key={c.name}
-              className="shrink-0 w-[78%] sm:w-[50%] lg:w-[32%] group/card"
-            >
+            <article key={c.name} className="shrink-0 w-[78%] sm:w-[50%] lg:w-[32%] group/card">
               <div className="relative aspect-[3/4] overflow-hidden bg-ink/10 group rounded-[4px] shadow-sm">
                 <img
                   src={c.img}
@@ -65,7 +62,7 @@ export function Conditions() {
                 href="#contact"
                 className="mt-3 inline-block text-[11px] tracking-[0.28em] uppercase text-ink hover:text-ink-soft pl-1 transition-colors"
               >
-                Learn more ›
+                Learn more &rsaquo;
               </a>
             </article>
           ))}
